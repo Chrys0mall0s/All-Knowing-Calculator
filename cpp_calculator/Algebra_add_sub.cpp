@@ -70,6 +70,6 @@ int main()
     }
             cout << " " << endl;
             cout << " " << endl;
-    cout << "Thank you, user! I hope you found the answer you werse looking for!"<< endl;
+    cout << "Thank you, user! I hope you found the answer you were looking for!"<< endl;
     return (0);
 }
