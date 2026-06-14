@@ -28,7 +28,104 @@ Finally, I played "The Farmer Was Replaced" for 25 hours and made one successful
 
 So... yeah I'm basically starting from like level 4 or 5 out of 100. Hopefully this brings me a little closer to my goals by the end 'XD 
 
-Program I made in "The Farmer Was Replaced":
+Program I made in "The Farmer Was Replaced": (Sorry. Everything looks goofy. I'm trying to figure this out)
 -
 
-(Gonna include that later if I remember. Sorry to everyone who actually read this far and wanted to see it. lol)
+
+Main
+-
+
+	#CLASS_Farmer.Farm_brain.Here(), can't call nested functions
+	CLASS_Farmer.Work()
+	move(East)
+
+while True:
+	main()
+
+
+CLASS_Farmer:
+-
+
+import FUNCTION_Checker
+import FUNCTION_Position
+
+def Work():
+	for i in range(get_world_size()):
+		return FUNCTION_Checker.checker()
+
+
+FUNCTION_Checker:
+-
+chess = get_ground_type() # 
+
+
+def position():
+	x = get_pos_x()
+	y = get_pos_y()
+	position = (x, y)
+	return position
+	print("I am here, ", position)
+
+
+def checker():
+
+	for i in range(get_world_size()):
+		a = get_entity_type()
+		if a == Entities.Grass:
+			if can_harvest():
+			#do_a_flip()
+			#print("shit looks like grass to me")
+				harvest()
+				till()
+				plant(Entities.Pumpkin)
+				move(North)
+			else:
+				use_item(Items.Water)
+		elif a == Entities.Dead_Pumpkin:
+				harvest()
+				till()
+				plant(Entities.Tree)
+				move(North)
+		elif a == Entities.Tree:
+			if can_harvest():
+			#do_a_flip()
+			#print("it's a tree.")
+				harvest()
+				till()
+				plant(Entities.Bush)
+				move(North)
+			else:
+      use_item(Items.Fertilizer)
+		elif a == Entities.Carrot:
+			if can_harvest():
+			#do_a_flip()
+			#print("...Carrot.")
+				harvest()
+				till()
+				plant(Entities.Pumpkin)
+				move(North)
+			else:
+  				use_item(Items.Water)
+    elif a == Entities.Bush:
+      if can_harvest():
+      #do_a_flip()
+      #print("we love a good bush 'round here")
+        harvest()
+        till()
+        plant(Entities.Carrot)
+        move(North)
+       else:
+      use_item(Items.Water)
+		elif a == Entities.Pumpkin:
+			if can_harvest():
+				harvest()
+				till()
+				plant(Entities.Bush)
+				move(North)
+			else:
+				use_item(Items.Fertilizer)
+		else:
+			till()
+			plant(Entities.Carrot)
+			move(North)
+			 
